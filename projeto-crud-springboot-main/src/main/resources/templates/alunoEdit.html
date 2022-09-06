@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos</title>
+    
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1><i>Editar Aluno</i></h1>    
+    
+    <a href="/alunos"><i>Pagina Inicial</i></a>
+    
+    <form th:action="@{/salvarAluno}" th:object="${aluno}" method="POST" id="formAluno">
+      
+        <label><i>Matricula:</i></label> <span th:text="${aluno.matricula}"></span>
+        <br>
+        <input type="hidden" th:value="${aluno.matricula}" th:field="${aluno.matricula}" name="matricula" />
+      
+        <label><i>Nome:</i></label>
+        <input type="text" placeholder="Digite o nome" th:value="${aluno.nome}" name="nome" required/>
+        <br>  
+        
+
+        <br>
+        <br>
+        <input type="submit" value="Salvar" />
+        <input type="reset"  value="Cancelar"/>
+    </form>
+    
+</body>
+
+</html>

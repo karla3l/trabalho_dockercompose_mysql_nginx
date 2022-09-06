@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos</title>
+    
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1><i>Editar Professor</i></h1>    
+    
+    <a href="/professores">Pagina inicial</a>
+   
+    <form th:action="@{/salvarProfessor}" th:object="${professor}" method="POST" id="formProfessor">
+      
+        <label><i>Codigo:</i></label> <span th:text="${professor.codigo}"></span>
+        <br>
+        <input type="hidden" th:value="${professor.codigo}" th:field="${professor.codigo}" name="codigo" />
+      
+        <label><i>Nome:</i></label>
+        <input type="text" placeholder="Digite o nome" th:value="${professor.nome}" name="nome" required/>
+        <br>  
+        
+
+        <br>
+        <br>
+        <input type="submit" value="Salvar" />
+        <input type="reset"  value="Cancelar"/>
+    </form>
+    
+</body>
+
+</html>
